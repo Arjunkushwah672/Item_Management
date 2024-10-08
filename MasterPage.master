@@ -1,0 +1,713 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html runat="server">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+    <meta name="author" content="AdminKit">
+    <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <%--   <link rel="shortcut icon" href="assets/Images/Technical-Support.jpg" />--%>
+
+    <link rel="canonical" href="https://demo-basic.adminkit.io/" />
+
+    <title>Default </title>
+    <link href="mis/Common/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="mis/Common/assets/css/Fontawesome.css" rel="stylesheet" />
+    <link href="assets/css/Fontawesome.css" rel="stylesheet" />
+    <%--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />--%>
+
+    <style>
+        fieldset {
+            border: 2px solid black;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+            background-color: #eeeeee;
+            margin-top: 20px;
+            box-shadow: 1px 3px red, -1em 0 .4em olive;
+        }
+
+        legend {
+            width: auto;
+            margin-left: 1.7rem;
+            padding: 0.5rem 1rem;
+            margin-top: -2rem;
+            border: 2px solid black;
+            color: black;
+            background-color: lavender;
+            font-size: 1.2rem;
+            border-radius: 10px;
+        }
+
+        .img-fluid {
+            border: 3px solid gray;
+            margin-left: 1rem;
+        }
+
+        .card {
+            padding: 1rem 2rem;
+        }
+
+        .table-responsive th {
+            background-color: gray;
+            color: white
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .sidebar-nav {
+            width: 250px;
+            margin-top: 2rem;
+            background-color:;
+            color: white;
+            list-style: none;
+            padding: 0;
+            font-size: .85rem;
+            font-weight: 600;
+            letter-spacing: .5px;
+            transition: all .3s;
+        }
+
+
+            .sidebar-nav > li {
+                position: relative;
+            }
+
+                .sidebar-nav > li > a {
+                    display: block;
+                    padding: 15px;
+                    color: white;
+                    text-decoration: none;
+                    transition: background-color 0.3s;
+                }
+
+                    .sidebar-nav > li > a:hover {
+                        background-color: #ff0000;
+                    }
+
+
+        .nav.child_menu {
+            /*  display: none;
+            list-style: none;
+            padding-left: 15px;
+            background-color:;*/
+            padding: .7rem 2rem;
+            display: none;
+            color: #25396f;
+            font-size: .85rem;
+            font-weight: 600;
+            letter-spacing: .5px;
+            transition: all .3s;
+        }
+
+
+
+            .nav.child_menu > li > a {
+                padding: 10px;
+                color: #ddd;
+                text-decoration: none;
+                display: block;
+                transition: background-color 0.3s;
+            }
+
+                .nav.child_menu > li > a:hover {
+                    background-color: #ff0000;
+                }
+
+        .fa {
+            margin-right: 10px;
+        }
+
+
+        .fa-chevron-down {
+            float: right;
+            margin-left: 10px;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="Header" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+
+        <div class="wrapper">
+            <nav id="sidebar" class="sidebar js-sidebar bg-black">
+                <div class="sidebar-content badge-secondary js-simplebar bg-black ">
+                    <%--  <img src="assets/Images/mainlogo.png" />--%>
+                    <%--  <a class="" href="#">--%>
+
+                    <%--                              <img src="assets/Images/mainlogo.png" CssClass="mt-2" style="width:25%; margin-top:1reml" >--%>
+
+                    <h2 style="font-family: 'Courier New' 'Yu Gothic UI'; font-weight: 600; color: greenyellow; text-align: center; margin-top: 1rem;"></h2>
+                    <div class="text-center d-flex">
+
+                        <asp:Image ID="Image1" CssClass="img-fluid rounded-circle mt-2 w-25" runat="server" />
+                        <div class="mt-3 ml-4  ">
+                            <p class="mb-1 disabled">Welcome!</p>
+                            <asp:Label runat="server" ID="lbluser2" class="text-"> </asp:Label>
+                            <%--</a>--%>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <ul class="sidebar-nav ">
+                        <li><a><i class="fa fa-home "></i>Home <span class="fa fa-chevron-down "></span></a>
+                            <ul class="nav child_menu ">
+
+                                <li><a href="/mis/Common/DashBoard.aspx">Dashboard1</a></li>
+                                <li><a href="Dashboard.aspx">Dashboard2</a></li>
+                                <%--   <li><a href="index3.html">Dashboard3</a></li>--%>
+                            </ul>
+                        </li>
+                        <li><a><i class="fa fa-edit"></i>CasCading Master <span class="fa fa-chevron-down"></span></a>
+                            <ul class="nav child_menu">
+                                <li><a href="/mis/Common/StateMaster.aspx">State Master</a></li>
+                                <li><a href="/mis/Common/DivisionMaster.aspx">Division Master</a></li>
+                                <li><a href="/mis/Common/CityMaster.aspx">City Master</a></li>
+                                <%--  <li><a href="form_wizards.html">Form Wizard</a></li>
+                                     <li><a href="form_upload.html">Form Upload</a></li>
+                                      <li><a href="form_buttons.html">Form Buttons</a></li>--%>
+                            </ul>
+                        </li>
+                        <li><a><i class="fa fa-desktop"></i>Hr Employee Reg<span class="fa fa-chevron-down"></span></a>
+                                   <ul class="nav child_menu">
+                                <li><a href="/mis/Common/EmployeeRegistration.aspx">Employee Registration</a></li>
+                                <%--   <li><a href="media_gallery.html">Media Gallery</a></li>
+                               <li><a href="typography.html">Typography</a></li>
+                             <li><a href="icons.html">Icons</a></li>
+                                      <li><a href="glyphicons.html">Glyphicons</a></li>
+                                      <li><a href="widgets.html">Widgets</a></li>
+                                      <li><a href="invoice.html">Invoice</a></li>
+                            <li><a href="inbox.html">Inbox</a></li>
+                            <li><a href="calendar.html">Calendar</a></li
+                            </ul>
+                        </li>
+                        <li><a><i class="fa fa-table"></i>items Table <span class="fa fa-chevron-down"></span></a>
+                            <ul class="nav child_menu">
+                                <li><a href="/mis/Common/ItemMaster.aspx">Item Master</a></li>
+                                <li><a href="/mis/Common/RateMaster.aspx">Rate Master</a></li>
+                                <li><a href="/mis/Common/DemandRequiredMaster.aspx">Demand Master</a></li>
+                            </ul>
+                        </li>
+                        <li><a><i class="fa fa-bar-chart"></i>Graf Js <span class="fa fa-chevron-down"></span></a>
+                            <ul class="nav child_menu">
+                                <li><a href="/mis/Common/Chart.aspx">Chart </a></li>
+                                <%-- <li><a href="chartjs2.html">Chart JS2</a></li>
+        <li><a href="morisjs.html">Moris JS</a></li>
+        <li><a href="echarts.html">ECharts</a></li>
+        <li><a href="other_charts.html">Other Charts</a></li>--%>
+                            </ul>
+                        </li>
+                        <li><a><i class="fa fa-clone"></i>Product Masters <span class="fa fa-chevron-down"></span></a>
+                            <ul class="nav child_menu">
+                                <li><a href="/mis/ProductManagement/ProdoctMasters.aspx">Product Master</a></li>
+                                <%--<li><a href="fixed_footer.html">Fixed Footer</a></li>--%>
+                            </ul>
+                        </li>
+
+
+                        <li><a><i class="fa-solid fa-cart-shopping"></i>&nbsp; Cart Ui <span class="fa fa-chevron-down"></span></a>
+                            <ul class="nav child_menu">
+                                <li><a href="/ProductPageUI.aspx">Cart Management</a></li>
+                                <%--<li><a href="fixed_footer.html">Fixed Footer</a></li>--%>
+                            </ul>
+                        </li>
+
+                        <li><a><i class="fa fa-clone"></i>Website Ui <span class="fa fa-chevron-down"></span></a>
+                            <ul class="nav child_menu">
+                                <li><a href="/Loginpage.aspx">LogOut</a></li>
+                                <%--<li><a href="fixed_footer.html">Fixed Footer</a></li>--%>
+                            </ul>
+                        </li>
+
+                        <li><a><i class="fa fa-clone"></i>Dynmic Pages<span class="fa fa-chevron-down"></span></a>
+                            <ul class="nav child_menu">
+                                <li><a href="/Loginpage.aspx">LogOut</a></li>
+                                <%--<li><a href="fixed_footer.html">Fixed Footer</a></li>--%>
+                            </ul>
+                        </li>
+
+                        <li><a><i class="fa fa-clone"></i>Log Out <span class="fa fa-chevron-down"></span></a>
+                            <ul class="nav child_menu">
+                                <li><a href="/Loginpage.aspx">LogOut</a></li>
+                                <%--<li><a href="fixed_footer.html">Fixed Footer</a></li>--%>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+
+                    <%--<ul class="sidebar-nav ">
+                            <li class="sidebar-header text-light ">Pages
+                            </li>
+
+                            <li><a><i class="fa fa-home"></i>Home <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="/mis/Common/DashBoard.aspx">Dashboard1</a></li>
+                                    <li><a href="Dashboard.aspx">Dashboard2</a></li>
+                                    <%--   <li><a href="index3.html">Dashboard3</a></li>--%>
+                    <%--   </ul>
+                            </li>
+
+                            <li class="sidebar-item   ">
+                                <a class="sidebar-link bg-transparent text-light" href="/mis/Common/StateMaster.aspx">
+                                    <i class="align-middle text-light" data-feather="user"></i><span class="align-middle">State Masters</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item  ">
+                                <a class="sidebar-link bg-transparent text-light" href="/mis/Common/DivisionMaster.aspx">
+                                    <i class="align-middle text-light" data-feather="user"></i><span class="align-middle">Division Masters</span>
+                                </a>
+                            </li>
+
+
+                            <li class="sidebar-item ">
+                                <a class="sidebar-link bg-transparent text-light" href="/mis/Common/CityMaster.aspx">
+                                    <i class="align-middle text-light" data-feather="user"></i><span class="align-middle">City Masters</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item">
+                                <a class="sidebar-link bg-transparent text-light" href="/mis/Common/EmployeeRegistration.aspx">
+                                    <i class="align-middle text-light" data-feather="log-in"></i><span class="align-middle">Emp Registration</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item ">
+                                <a class="sidebar-link bg-transparent text-light" href="/Loginpage.aspx">
+                                    <i class="fa-solid fa-right-to-bracket text-light"></i><span class="align-middle">Sign In</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item">
+                                <a class="sidebar-link bg-transparent text-light " href="/mis/Common/Chart.aspx">
+                                    <i class="align-middle text-light" data-feather="bar-chart-2"></i><span class="align-middle">Charts</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item">
+                                <a class="sidebar-link bg-transparent text-light" href="maps-google.html">
+                                    <i class="align-middle text-light" data-feather="map"></i><span class="align-middle">Maps</span>
+                                </a>
+                            </li>--%>
+
+                    <%--   <li class="sidebar-item">
+                        <a class="sidebar-link" href="pages-blank.html">
+                            <i class="align-middle" data-feather="book"></i><span class="align-middle">Blank</span>
+                        </a>
+                    </li>--%>
+
+                    <%--<li class="sidebar-header">Tools & Components
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link bg-transparent" href="ui-buttons.html">
+                            <i class="align-middle" data-feather="square"></i><span class="align-middle">Buttons</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link bg-transparent" href="ui-forms.html">
+                            <i class="align-middle" data-feather="check-square"></i><span class="align-middle">Forms</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link bg-transparent" href="ui-cards.html">
+                            <i class="align-middle" data-feather="grid"></i><span class="align-middle">Cards</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link bg-transparent" href="ui-typography.html">
+                            <i class="align-middle" data-feather="align-left"></i><span class="align-middle">Typography</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link bg-transparent" href="icons-feather.html">
+                            <i class="align-middle" data-feather="coffee"></i><span class="align-middle">Icons</span>
+                        </a>
+                    </li>--%>
+                    <%--<img src="assets/Images/Logologin-removebg-preview.jpg" />--%>
+
+                    <%-- <li class="sidebar-header">Plugins & Addons
+
+                            </li>--%>
+                    <%--  </ul>--%>
+
+                    <%--     <div class="sidebar-cta">
+                    <div class="sidebar-cta-content">
+                        <strong class="d-inline-block mb-2">Upgrade to Pro</strong>
+                        <div class="mb-3 text-sm">
+                            Are you looking for more components? Check out our premium version.
+				
+                        </div>
+                        <div class="d-grid">
+                            <a href="upgrade-to-pro.html" class="btn btn-primary">Upgrade to Pro</a>
+                        </div>
+                    </div>
+                </div>--%>
+                </div>
+
+
+
+            </nav>
+
+            <div class="main">
+                <nav class="navbar navbar-expand navbar-light navbar-bg" style="background-color: gainsboro">
+                    <a class="sidebar-toggle js-sidebar-toggle  ">
+                        <%--<i class="hamburger align-self-center bg-white"  ></i>--%>
+                        <i class="fa-solid align-self-center  fa-bars" style="font-size: 30px; color: black"></i>
+                    </a>
+
+                    <div class="navbar-collapse collapse ">
+                        <ul class="navbar-nav navbar-align">
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                            </ul>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+                                    <i class="align-middle" data-feather="settings"></i>
+                                </a>
+
+                                <a class="nav-link dropdown-toggle d-none d-sm-inline-block" style="font-size: 20px; color: #000000" href="#" data-bs-toggle="dropdown">
+                                    <%--<img src="https://lh3.googleusercontent.com/a/ACg8ocKqlFYI0wOJ5UGSNcgLprL9SQB7kysm0RLxrOZD7oxpzjglsQ0q=s288-c-no" class="avatar img-fluid rounded me-1" alt="" /> <span class="text-black"></span>--%>
+                                    <asp:Label Text="" runat="server" ID="lbluser"></asp:Label></a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i>Profile</a>
+                                    <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i>Analytics</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i>Settings & Privacy</a>
+                                    <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i>Help Center</a>
+                                    <div class="dropdown-divider"></div>
+                                    <%--<a class="dropdown-item" href="/Loginpage.aspx" >Log out</a>--%>
+
+                                    <asp:Button ID="btnLogout" runat="server" class="dropdown-item" Text="Logout" OnClick="Btnlogout_Click" />
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="container-fluid">
+                    <asp:ContentPlaceHolder ID="Main" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+
+
+                <div class="container-fluid">
+                    <asp:ContentPlaceHolder ID="Footer" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </div>
+
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row text-muted">
+                            <div class="col-6 text-start">
+                                <p class="mb-0">
+                                    <a class="text-muted" href="#" target="_blank"><strong>Admin Panel</strong></a> - <a class="text-muted" href="#" target="_blank"><strong></strong></a>
+
+                                </p>
+                            </div>
+                            <div class="col-6 text-end">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <a class="text-muted" href="/ContactUs.aspx" target="_blank">Contact Us </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="text-muted" href="/AboutUs.aspx" target="_blank">About US </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+        </div>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownToggles = document.querySelectorAll('.sidebar-nav > li > a');
+
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent the default link behavior
+                    const childMenu = this.nextElementSibling;
+
+                    // Close other open menus
+                    document.querySelectorAll('.nav.child_menu').forEach(menu => {
+                        if (menu !== childMenu) {
+                            menu.style.display = 'none'; // Hide other menus
+                        }
+                    });
+
+                    // Toggle the clicked menu
+                    if (childMenu.style.display === "block") {
+                        childMenu.style.display = "none"; // Hide if already open
+                    } else {
+                        childMenu.style.display = "block"; // Show if closed
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+    <script src="js/app.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
+            var gradient = ctx.createLinearGradient(0, 0, 0, 225);
+            gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
+            gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
+            // Line chart
+            new Chart(document.getElementById("chartjs-dashboard-line"), {
+                type: "line",
+                data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    datasets: [{
+                        label: "Sales ($)",
+                        fill: true,
+                        backgroundColor: gradient,
+                        borderColor: window.theme.primary,
+                        data: [
+                            2115,
+                            1562,
+                            1584,
+                            1892,
+                            1587,
+                            1923,
+                            2566,
+                            2448,
+                            2805,
+                            3438,
+                            2917,
+                            3327
+                        ]
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    legend: {
+                        display: false
+                    },
+                    tooltips: {
+                        intersect: false
+                    },
+                    hover: {
+                        intersect: true
+                    },
+                    plugins: {
+                        filler: {
+                            propagate: false
+                        }
+                    },
+                    scales: {
+                        xAxes: [{
+                            reverse: true,
+                            gridLines: {
+                                color: "rgba(0,0,0,0.0)"
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                stepSize: 1000
+                            },
+                            display: true,
+                            borderDash: [3, 3],
+                            gridLines: {
+                                color: "rgba(0,0,0,0.0)"
+                            }
+                        }]
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Pie chart
+            new Chart(document.getElementById("chartjs-dashboard-pie"), {
+                type: "pie",
+                data: {
+                    labels: ["Chrome", "Firefox", "IE"],
+                    datasets: [{
+                        data: [4306, 3801, 1689],
+                        backgroundColor: [
+                            window.theme.primary,
+                            window.theme.warning,
+                            window.theme.danger
+                        ],
+                        borderWidth: 5
+                    }]
+                },
+                options: {
+                    responsive: !window.MSInputMethodContext,
+                    maintainAspectRatio: false,
+                    legend: {
+                        display: false
+                    },
+                    cutoutPercentage: 75
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Bar chart
+            new Chart(document.getElementById("chartjs-dashboard-bar"), {
+                type: "bar",
+                data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    datasets: [{
+                        label: "This year",
+                        backgroundColor: window.theme.primary,
+                        borderColor: window.theme.primary,
+                        hoverBackgroundColor: window.theme.primary,
+                        hoverBorderColor: window.theme.primary,
+                        data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
+                        barPercentage: .75,
+                        categoryPercentage: .5
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        yAxes: [{
+                            gridLines: {
+                                display: false
+                            },
+                            stacked: false,
+                            ticks: {
+                                stepSize: 20
+                            }
+                        }],
+                        xAxes: [{
+                            stacked: false,
+                            gridLines: {
+                                color: "transparent"
+                            }
+                        }]
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var markers = [{
+                coords: [31.230391, 121.473701],
+                name: "Shanghai"
+            },
+            {
+                coords: [28.704060, 77.102493],
+                name: "Delhi"
+            },
+            {
+                coords: [6.524379, 3.379206],
+                name: "Lagos"
+            },
+            {
+                coords: [35.689487, 139.691711],
+                name: "Tokyo"
+            },
+            {
+                coords: [23.129110, 113.264381],
+                name: "Guangzhou"
+            },
+            {
+                coords: [40.7127837, -74.0059413],
+                name: "New York"
+            },
+            {
+                coords: [34.052235, -118.243683],
+                name: "Los Angeles"
+            },
+            {
+                coords: [41.878113, -87.629799],
+                name: "Chicago"
+            },
+            {
+                coords: [51.507351, -0.127758],
+                name: "London"
+            },
+            {
+                coords: [40.416775, -3.703790],
+                name: "Madrid "
+            }
+            ];
+            var map = new jsVectorMap({
+                map: "world",
+                selector: "#world_map",
+                zoomButtons: true,
+                markers: markers,
+                markerStyle: {
+                    initial: {
+                        r: 9,
+                        strokeWidth: 7,
+                        stokeOpacity: .4,
+                        fill: window.theme.primary
+                    },
+                    hover: {
+                        fill: window.theme.primary,
+                        stroke: window.theme.primary
+                    }
+                },
+                zoomOnScroll: false
+            });
+            window.addEventListener("resize", () => {
+                map.updateSize();
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
+            var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
+            document.getElementById("datetimepicker-dashboard").flatpickr({
+                inline: true,
+                prevArrow: "<span title=\"Previous month\">&laquo;</span>",
+                nextArrow: "<span title=\"Next month\">&raquo;</span>",
+                defaultDate: defaultDate
+            });
+        });
+    </script>
+</body>
+</html>

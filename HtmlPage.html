@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <style>
+        fieldset {
+            border: 2px solid black;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+            background-color: darkgray ;
+            margin-top: 5%;
+        }
+
+        legend {
+            width: auto;
+            margin-left: 1.7rem;
+            padding: 0.5rem 1rem;
+            margin-top: -2rem;
+            border: 2px solid black;
+            color: black;
+            background-color: white;
+            font-size: 1.2rem;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <fieldset>
+            <legend>Registration Form</legend>
+
+
+            <form name="myForm" onsubmit="return validationForm()">
+                <div class="card p-4 bg-transparent border-0">
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <label>First name</label>
+                            <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter first name" />
+                            <label id="firstNameError" style="color:red;"></label>
+                        </div>
+
+                        <div class="col-md-6 ">
+                            <label>Last  name</label>
+                            <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter first name" />
+                            <label id="lastNameError" style="color:red;"></label>
+                        </div>
+
+
+
+                        <div class="col-md-6 ">
+                            <label>Father  name</label>
+                            <input type="text" class="form-control" id="Fathername" name="Fathername" placeholder="Enter Father name" />
+                            <label id="FNameError" style="color:red;"></label>
+                        </div>
+
+
+
+                        <div class="col-md-6 ">
+                            <label>Email  </label>
+                            <input type="text" class="form-control" id="Email" name="Email" placeholder="Enter Email " />
+                            <label id="EmailError" style="color:red;"></label>
+                        </div>
+
+
+
+                        <div class="col-md-6 ">
+                            <label>Mob No</label>
+                            <input type="text" class="form-control" id="MobNo" name="MobNo" placeholder="Enter Mob No" />
+                            <label id="MobNoError" style="color:red;"></label>
+                        </div>
+
+
+
+                        <div class="col-md-6 ">
+                            <label>PassWord</label>
+                            <input type="password" class="form-control" id="PassWord" name="PassWord" placeholder="Enter Pass name" />
+                            <label id="PassWordError" style="color:red;"></label>
+                        </div>
+
+                        <div class="col-md-1">
+                            <button name="submit" type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+    <script>
+        function validationForm() {
+            let fname = document.forms["myForm"]["fname"].value;
+            let lname = document.forms["myForm"]["lname"].value;
+            let Fathername = document.forms["myForm"]["Fathername"].value;
+            let Email = document.forms["myForm"]["Email"].value;
+            let MobNo = document.forms["myForm"]["MobNo"].value;
+            let PassWord = document.forms["myForm"]["PassWord"].value;
+            let isValid = true;
+
+            if (fname === "") {
+                document.getElementById("firstNameError").innerHTML = "Enter First name";
+                isValid = false;
+            }
+            else {
+                document.getElementById("firstNameError").innerHTML = "";
+            }
+
+
+
+            if (lname == "") {
+                document.getElementById("lastNameError").innerHTML = "Enter Last name ";
+                isValid = false;
+            }
+            else {
+                document.getElementById("lastNameError").innerHTML = "";
+            }
+
+
+            if (Fathername == "") {
+                document.getElementById("FNameError").innerHTML = "Enter Father name  ";
+                isValid = false;
+            }
+            else {
+                document.getElementById("FNameError").innerHTML = "";
+            }
+
+
+
+
+            if (Email == "") {
+                document.getElementById("EmailError").innerHTML = "Enter Email";
+                isValid = false;
+            }
+            else {
+                document.getElementById("EmailError").innerHTML = "";
+            }
+
+
+
+            if (MobNo == "") {
+                document.getElementById("MobNoError").innerHTML = "Enter Mob No";
+                isValid = false;
+            }
+            else {
+                document.getElementById("MobNoError").innerHTML = "";
+            }
+
+
+
+            if (PassWord == "") {
+                document.getElementById("PassWordError").innerHTML = "Enter Pass";
+                isValid = false;
+            }
+            else {
+                document.getElementById("PassWordError").innerHTML = "";
+            }
+
+
+            return isValid;
+        }
+    </script>
+
+</body>
+</html>
